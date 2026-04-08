@@ -1,48 +1,36 @@
 import React from 'react';
-import { Quote } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import { founder } from '../content/founder';
 export function TestimonialsSection() {
-  const testimonials = [{
-    id: 1,
-    content: 'Working with SAALR LLC transformed our business. Their expertise in web development and AI integration gave us a competitive edge in the market.',
-    author: 'Sarah Johnson',
-    role: 'CEO, TechVision Inc.'
-  }, {
-    id: 2,
-    content: 'The wealth management advice I received was invaluable. My investment portfolio has seen consistent growth thanks to the strategic guidance provided.',
-    author: 'Michael Chen',
-    role: 'Entrepreneur'
-  }, {
-    id: 3,
-    content: 'Our educational platform needed a complete overhaul, and SAALR LLC delivered beyond our expectations with an engaging, gamified learning experience.',
-    author: 'Emily Rodriguez',
-    role: 'Director of Education, LearnSmart'
-  }];
-  return <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
+  return <section id="testimonials" className="section-shell w-full py-12 md:py-24 lg:py-32 bg-secondary/25">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-              Testimonials
+            <div className="eyebrow">
+              Profile
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              What Clients Say
+            <h2 className="text-4xl sm:text-5xl md:text-6xl">
+              Why this background fits complex transformation work
             </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Hear from entrepreneurs and businesses I've helped succeed
+            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
+              Instead of generic testimonials, this section highlights the operating profile behind the practice and where it is strongest.
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-3">
-          {testimonials.map(testimonial => <div key={testimonial.id} className="flex flex-col space-y-4 rounded-lg border p-6 shadow-sm">
-              <Quote className="h-8 w-8 text-primary opacity-50" />
-              <p className="text-muted-foreground">{testimonial.content}</p>
-              <div className="mt-auto">
-                <p className="font-semibold">{testimonial.author}</p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.role}
-                </p>
-              </div>
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 py-12 md:grid-cols-3">
+          {founder.operatingSignals.map(signal => <div key={signal.title} className="panel flex flex-col space-y-4 p-6">
+              <CheckCircle2 className="h-8 w-8 text-accent" />
+              <h3 className="text-3xl">{signal.title}</h3>
+              <p className="text-sm leading-6 text-muted-foreground">{signal.content}</p>
             </div>)}
+        </div>
+        <div className="panel mx-auto max-w-6xl p-8">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <h3 className="text-4xl">The standard is not activity. The standard is reliable business outcomes across product, platform, and operations.</h3>
+            <p className="text-base leading-8 text-muted-foreground">
+              That means clear ownership, credible roadmaps, delivery metrics, resilient architecture, and systems that make sense for the business model, not just the demo environment.
+            </p>
+          </div>
         </div>
       </div>
     </section>;

@@ -5,53 +5,53 @@ export function Header() {
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
-  return <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b">
+  return <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <div className="flex items-center gap-2">
-          <a href="#" className="text-2xl font-bold tracking-tight">
-            SAALR<span className="text-primary">LLC</span>
+        <div className="flex items-center gap-3">
+          <a href="#" className="text-xl font-bold tracking-tight text-primary md:text-2xl">
+            saalr.io
           </a>
+          <div className="hidden text-xs uppercase tracking-[0.28em] text-muted-foreground sm:block">
+            Agentic Orchestration
+          </div>
         </div>
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">
-            About
+            Founder
           </a>
           <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">
-            Services
+            Capabilities
           </a>
           <a href="#portfolio" className="text-sm font-medium hover:text-primary transition-colors">
-            Portfolio
+            Products
           </a>
           <a href="#testimonials" className="text-sm font-medium hover:text-primary transition-colors">
-            Testimonials
+            Fit
           </a>
           <a href="#contact" className="text-sm font-medium bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
-            Contact
+            Book Strategy Call
           </a>
         </nav>
-        {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={toggleMobileMenu} aria-label="Toggle menu">
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && <div className="md:hidden fixed inset-0 top-16 z-50 bg-background border-t">
+      {mobileMenuOpen && <div className="md:hidden fixed inset-0 top-16 z-50 bg-background border-t border-border/60">
           <nav className="flex flex-col p-6 space-y-6">
             <a href="#about" className="text-lg font-medium hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-              About
+              Founder
             </a>
             <a href="#services" className="text-lg font-medium hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-              Services
+              Capabilities
             </a>
             <a href="#portfolio" className="text-lg font-medium hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-              Portfolio
+              Products
             </a>
             <a href="#testimonials" className="text-lg font-medium hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-              Testimonials
+              Fit
             </a>
             <a href="#contact" className="text-lg font-medium bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors w-full text-center" onClick={() => setMobileMenuOpen(false)}>
-              Contact
+              Book Strategy Call
             </a>
           </nav>
         </div>}
